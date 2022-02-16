@@ -1,0 +1,13 @@
+@import "colors";
+@import "fonts";
+@import "header";
+@import "navbar";
+
+.container {
+    margin: 0 120px;
+}
+body,
+html {
+    margin: 0;
+    box-sizing: border-box;
+}

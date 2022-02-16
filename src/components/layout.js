@@ -3,17 +3,16 @@ import Header from "./header"
 import Footer from "./footer"
 import Navbar from "./navbar"
 
-import "./components.css"
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
-        <div className="layout">
+        <div >
             <Header />
             <Navbar />
-            <div className="layout-body">
-                <div>{children}</div>
-                <Footer />
+            <div className="container">
+                {children}
             </div>
+            <Footer />
         </div>
     )
 }

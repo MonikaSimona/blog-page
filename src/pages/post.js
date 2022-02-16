@@ -1,14 +1,16 @@
 import React from "react"
-import { Redirect } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 import Markdown from "react-markdown"
 import Layout from "../components/layout"
 import postlist from "../posts.json"
 import "./pages.css"
 
 const Post = (props) => {
+    const navigate = useNavigate();
+
     const validId = parseInt(props.match.params.id)
     if (!validId) {
-        return <Redirect to="/404" />
+        navigate("/404")
     }
     const fetchedPost = {}
     let postExists = false
@@ -24,7 +26,7 @@ const Post = (props) => {
         }
     })
     if (postExists === false) {
-        return <Redirect to="/404" />
+        navigate("/404")
     }
     return (
         <Layout>

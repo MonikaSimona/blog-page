@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import Markdown from "react-markdown"
 import postlist from "../posts.json"
 
-import "./components.css"
 
 const PostList = () => {
+
     const excerptList = postlist.map(post => {
         return post.content.split(" ").slice(0, 20).join(" ") + "..."
     })
@@ -22,7 +22,6 @@ const PostList = () => {
                             </div>
                             <small>Published on {post.date} by {post.author}</small>
                             <hr />
-                            {/* <Markdown source={excerptList[i]} escapeHtml={false} /> */}
                             <p>{post.description}</p>
                             <small><Link className="links" to={`/post/${post.id}`}>Read more</Link></small>
                         </div>
