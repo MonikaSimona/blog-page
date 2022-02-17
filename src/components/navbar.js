@@ -1,20 +1,27 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import CustomLink from "./CustomLink"
 
 const Navbar = () => {
-
-
     return (
-
         <div className="navbar-wrapper">
-
-            <NavLink to="healthandfintess" className="nav-item">Health &#38; Fitness</NavLink>
-            <NavLink to="selfimprovement" className="nav-item">Self Improvement</NavLink>
-            <NavLink to="food" className="nav-item">Food</NavLink>
-            <NavLink to="booksandmovies" className="nav-item">Books &#38; Movies</NavLink>
-            <NavLink to="beautyandstyle" className="nav-item">Beauty &#38; Style</NavLink>
+            <img src={require("../assets/images/heroDecoration.svg")} className="deco" alt="" />
+            <CustomLink to="/health-and-fintes">
+                Health &#38; Fitness
+            </CustomLink>
+            <CustomLink to="/self-improvement">
+                Self Improvement
+            </CustomLink>
+            <CustomLink to="/food">
+                Food
+            </CustomLink>
+            <CustomLink to="/books-and-movies">
+                Books &#38; Movies
+            </CustomLink>
+            <CustomLink to="/beauty-and-style">
+                Beauty &#38; Style
+            </CustomLink>
+            <img src={require("../assets/images/heroDecoration.svg")} className="deco" alt="" />
         </div>
-
     )
 }
 

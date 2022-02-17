@@ -1,14 +1,13 @@
 import React from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { Navigate, useNavigate, useParams } from "react-router-dom"
 import Markdown from "react-markdown"
-import Layout from "../components/layout"
 import postlist from "../posts.json"
-import "./pages.css"
+import BlogCard from "../components/BlogCard"
 
-const Post = (props) => {
+const Post = () => {
     const navigate = useNavigate();
-
-    const validId = parseInt(props.match.params.id)
+    const { id } = useParams()
+    const validId = parseInt(id)
     if (!validId) {
         navigate("/404")
     }
@@ -29,16 +28,15 @@ const Post = (props) => {
         navigate("/404")
     }
     return (
-        <Layout>
-            <div className="post">
-                <h2>{fetchedPost.title}</h2>
-                {fetchedPost.image && <img src={fetchedPost.image} width="500" height="500" alt="" />}
-                <p>{fetchedPost.description}</p>
-                <small>Published on {fetchedPost.date} by {fetchedPost.author}</small>
-                <hr />
-                <Markdown source={fetchedPost.content} escapeHtml={false} />
-            </div>
-        </Layout>
+        // <div className="post">
+        //     <h2>{fetchedPost.title}</h2>
+        //     {fetchedPost.image && <img src={fetchedPost.image} width="500" height="500" alt="" />}
+        //     <p>{fetchedPost.description}</p>
+        //     <small>Published on {fetchedPost.date} by {fetchedPost.author}</small>
+        //     <hr />
+        //     <Markdown source={fetchedPost.content} escapeHtml={false} />
+        // </div>
+        <BlogCard title={fetchedPost.title} image={fetchedPost.image} desc={fetchedPost.description} date={fetchedPost.date} />
     )
 }
 

@@ -1,5 +1,7 @@
 .header-wrapper {
+    position: relative;
     background-color: $primary;
+
     .header {
         height: 86px;
         display: flex;

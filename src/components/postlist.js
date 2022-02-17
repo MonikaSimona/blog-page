@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Markdown from "react-markdown"
 import postlist from "../posts.json"
+import BlogCard from "./BlogCard"
 
 
 const PostList = () => {
@@ -15,16 +16,8 @@ const PostList = () => {
             {postlist.length &&
                 postlist.map((post, i) => {
                     return (
-                        <div key={i} className="post-card">
-                            <div className="img-container">
-                                {post.image && <img className="thumbnail" width={80} src={post.image} alt="" />}
-                                <h2 className="post-title"><Link className="links" to={`/post/${post.id}`}>{post.title}</Link></h2>
-                            </div>
-                            <small>Published on {post.date} by {post.author}</small>
-                            <hr />
-                            <p>{post.description}</p>
-                            <small><Link className="links" to={`/post/${post.id}`}>Read more</Link></small>
-                        </div>
+
+                        <BlogCard key={i} title={post.title} image={post.image} desc={post.description} date={post.date} />
                     )
                 })
             }

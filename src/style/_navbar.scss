@@ -4,7 +4,32 @@
     justify-content: center;
     height: 134px;
     align-items: center;
-    .nav-item {
-        margin-left: 33px;
+    gap: 33px;
+    .deco {
+        width: 20px;
+        &:last-of-type {
+            transform: rotate(-180deg);
+        }
+    }
+}
+.link-wrapper {
+    position: relative;
+    .activeStroke {
+        &:last-of-type {
+            position: absolute;
+            top: -3px;
+            right: -10px;
+        }
+        &:first-of-type {
+            position: absolute;
+            bottom: -3px;
+            left: -10px;
+        }
+    }
+}
+.active {
+    font-weight: bold;
+    &:hover {
+        color: $title;
     }
 }

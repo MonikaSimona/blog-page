@@ -1,0 +1,53 @@
+.hero {
+    position: relative;
+    height: 853px;
+    display: flex;
+    .hero-quote-wrapper {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 95px;
+    }
+    .hero-quote {
+        font-family: "Amatic SC", cursive;
+        color: $accent1;
+        font-weight: bold;
+        font-size: 118px;
+        letter-spacing: 7px;
+        margin: 0;
+        &:last-of-type {
+            margin-left: 40px;
+        }
+    }
+    .med-image {
+        position: absolute;
+        right: 0;
+        top: -34px;
+    }
+    .desk-image {
+        position: absolute;
+        left: 0;
+        top: -24px;
+    }
+    .arrow {
+        position: absolute;
+        left: 388px;
+        top: 442px;
+    }
+    .hero-deco {
+        width: 55px;
+        position: absolute;
+        &:first-of-type {
+            left: 168px;
+            top: 623px;
+        }
+    }
+    .bottom {
+        left: 168px;
+        top: 623px;
+    }
+    .top {
+        left: 835px;
+        top: 46px;
+        transform: rotate(-180deg);
+    }
+}

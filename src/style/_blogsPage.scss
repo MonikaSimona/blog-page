@@ -1,0 +1,13 @@
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-title {
+    text-transform: capitalize;
+    font-family: "Amatic SC", cursive;
+    font-size: 150px;
+    font-weight: 700;
+    color: $accent1;
+    margin: 0;
+}
