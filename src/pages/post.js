@@ -1,6 +1,5 @@
 import React from "react"
 import { Navigate, useNavigate, useParams } from "react-router-dom"
-import Markdown from "react-markdown"
 import postlist from "../posts.json"
 import BlogCard from "../components/BlogCard"
 
@@ -28,14 +27,7 @@ const Post = () => {
         navigate("/404")
     }
     return (
-        // <div className="post">
-        //     <h2>{fetchedPost.title}</h2>
-        //     {fetchedPost.image && <img src={fetchedPost.image} width="500" height="500" alt="" />}
-        //     <p>{fetchedPost.description}</p>
-        //     <small>Published on {fetchedPost.date} by {fetchedPost.author}</small>
-        //     <hr />
-        //     <Markdown source={fetchedPost.content} escapeHtml={false} />
-        // </div>
+
         <BlogCard title={fetchedPost.title} image={fetchedPost.image} desc={fetchedPost.description} date={fetchedPost.date} />
     )
 }
