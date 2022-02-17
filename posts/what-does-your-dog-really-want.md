@@ -7,6 +7,7 @@ date: 2022-02-17T14:47:16.882Z
 tags:
   - post
   - featured
+  - health-fitness
 image: https://pocket-syndicated-images.s3.amazonaws.com/5dcc113a06128.jpg
 ---
 <!--StartFragment-->
