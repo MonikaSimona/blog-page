@@ -1,0 +1,30 @@
+.blogs-category-wrapper {
+    position: relative;
+    margin-bottom: 70px;
+}
+.category-title {
+    font-family: "Amatic SC", cursive;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 63px;
+    letter-spacing: 0.07em;
+    color: $title;
+}
+.blog-cards-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.category-link-wrapper {
+    display: flex;
+    justify-content: end;
+    margin-top: 80px;
+}
+.no-blogs {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: $accent2;
+    text-align: center;
+    width: 100%;
+}

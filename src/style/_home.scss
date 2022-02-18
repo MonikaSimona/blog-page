@@ -3,6 +3,7 @@
     height: 853px;
     display: flex;
     .hero-quote-wrapper {
+        position: relative;
         display: inline-block;
         margin: 0 auto;
         margin-top: 95px;
@@ -36,18 +37,14 @@
     .hero-deco {
         width: 55px;
         position: absolute;
-        &:first-of-type {
-            left: 168px;
-            top: 623px;
-        }
     }
     .bottom {
         left: 168px;
         top: 623px;
     }
     .top {
-        left: 835px;
-        top: 46px;
+        right: 10px;
+        top: 0;
         transform: rotate(-180deg);
     }
 }

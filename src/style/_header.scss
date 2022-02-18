@@ -40,6 +40,7 @@
     .cta-link {
         font-weight: 500;
         font-size: 17px;
+        text-decoration: none;
     }
     .arrow {
         margin-left: 4px;
@@ -48,7 +49,7 @@
     &:hover {
         cursor: pointer;
         .arrow {
-            transform: translateX(10px);
+            transform: translateX(5px);
         }
     }
 }

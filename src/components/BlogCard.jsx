@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ReadLink from './ReadLink'
+import { Icon } from '@iconify/react';
 
-const BlogCard = ({ title, image, desc, date }) => {
+const BlogCard = ({ id, title, image, desc, date }) => {
     return (
         <div className="card-wrapper">
             <div className="card-header">
@@ -22,12 +24,8 @@ const BlogCard = ({ title, image, desc, date }) => {
                 <p className="card-date">
                     {date}
                 </p>
-                <button className="save-button">
-                    S
-                </button>
-                <Link to="/food" className="read-more-link">
-                    link
-                </Link>
+                <Icon icon="bi:save" className='save-button' onClick={() => console.log("clicked icon")} />
+                <ReadLink link={`/post/${id}`} text="Read more" />
             </div>
         </div>
     )

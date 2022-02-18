@@ -4,9 +4,12 @@
 @import "navbar";
 @import "blogsPage";
 @import "home";
+@import "blogsFromCategory";
+@import "blogCard";
 
 .container {
-    margin: 0 120px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 body,
 html {
