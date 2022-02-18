@@ -1,0 +1,39 @@
+.section-wrapper {
+    position: relative;
+    .text-small {
+        font-family: "Montserrat", sans-serif;
+        font-size: 29px;
+        font-weight: 400;
+        color: $text;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+    .text-big {
+        font-family: "Montserrat", sans-serif;
+        font-size: 44px;
+        line-height: 35px;
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-weight: 800;
+        color: $title;
+    }
+}
+.form {
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 490px;
+        label {
+        }
+        input {
+            height: 67px;
+            border-radius: 5px;
+            border-color: $accent2;
+            margin-top: 16px;
+            &:focus {
+                outline: none;
+                border-color: $accent1;
+            }
+        }
+    }
+}

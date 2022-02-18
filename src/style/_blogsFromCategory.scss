@@ -13,8 +13,9 @@
 .blog-cards-wrapper {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
 }
 .category-link-wrapper {
     display: flex;

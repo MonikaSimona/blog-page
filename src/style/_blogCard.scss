@@ -3,13 +3,12 @@
     width: 100%;
     padding: 10px;
     padding-bottom: 27px;
-    background-color: rgba(238, 228, 211, 0.33);
+    background-color: rgba(238, 228, 211, 0.5);
     transition: 0.3s;
     height: fit-content;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 16px;
+    // box-shadow: 0.5px 0.5px 10px rgba(128, 128, 128, 0.192);
     &:hover {
+        cursor: pointer;
         background-color: #eee4d3;
     }
     .card-header {
@@ -54,6 +53,12 @@
             color: $secondary;
             width: 16px;
             height: 16px;
+            transition: 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                color: $accent1;
+            }
         }
     }
 }

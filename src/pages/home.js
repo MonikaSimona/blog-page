@@ -3,20 +3,23 @@ import PostList from "../components/postlist"
 import BlogsFromCategory from "./BlogsFromCategory"
 import FeaturedBlogs from "./FeaturedBlogs"
 import postlist from "../posts.json"
+import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
 
 const Home = () => {
-    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-fitness"))
-    let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement"))
-    let foodBlogs = postlist.filter((post) => post.tags.includes("food"))
-    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-movies"))
-    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-style"))
+    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-fitness")).slice(0, 4)
+    let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement")).slice(0, 4)
+    let foodBlogs = postlist.filter((post) => post.tags.includes("food")).slice(0, 4)
+    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-movies")).slice(0, 4)
+    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-style")).slice(0, 4)
     return (
         <>
             <div className="hero">
                 <img src={require("../assets/images/heroDeskIllustration.svg")} className="desk-image" alt="" />
                 <div className="hero-quote-wrapper">
                     <img src={require("../assets/images/heroDecoration.svg")} className="hero-deco top" alt="" />
+
+                    <img src={require("../assets/images/heroArrow.svg")} className="arrow" alt="" />
                     <h1 className=" hero-quote">
                         Get
                     </h1>
@@ -27,7 +30,6 @@ const Home = () => {
 
                 <img src={require("../assets/images/heroMedidationIllustration.svg")} className="med-image" alt="" />
 
-                <img src={require("../assets/images/heroArrow.svg")} className="arrow" alt="" />
 
                 <img src={require("../assets/images/heroDecoration.svg")} className="hero-deco bottom" alt="" />
 
@@ -35,7 +37,6 @@ const Home = () => {
             </div>
             <div className="container">
                 <FeaturedBlogs />
-                {/* <PostList /> */}
                 <BlogsFromCategory
                     category={"Health & Fitness"}
                     postsFromCategory={healthAndFintessBlogs} />
@@ -50,6 +51,7 @@ const Home = () => {
                     postsFromCategory={booksAndMoviesBlogs} />
                 <BlogsFromCategory
                     category={"Beauty & Style"} postsFromCategory={beautyAndStyleBlogs} />
+                <BecomeAMemberSection />
             </div>
         </>
 
