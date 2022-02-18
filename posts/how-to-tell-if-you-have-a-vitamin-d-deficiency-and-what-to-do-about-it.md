@@ -4,9 +4,7 @@ description: A nutritional scientist explains how much Vitamin D we need, where
   we can get it from, and how to spot the telltale signs of deficiency.
 author: Chloe Gray
 date: 2022-02-17T15:09:06.588Z
-tags:
-  - post
-  - health-fitness
+tags: post,health-fitness
 image: https://pocket-syndicated-images.s3.amazonaws.com/618dbedfea123.png
 ---
 <!--StartFragment-->
