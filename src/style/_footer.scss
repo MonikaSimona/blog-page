@@ -1,0 +1,36 @@
+.footer-wrapper {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    .footer-quote {
+        font-family: "Amatic SC", cursive;
+        font-size: 46px;
+        font-weight: 400;
+        margin-bottom: 93px;
+        text-align: center;
+        color: $accent2;
+    }
+    .footer {
+        height: 70px;
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .footer-icon {
+            width: 20px;
+            height: 20px;
+            color: $text;
+        }
+        .footer-text {
+            font-family: "Montserrat", sans-serif;
+            font-size: 19px;
+            color: $text;
+            font-weight: 400;
+            margin-left: 3px;
+            &:last-of-type {
+                margin-left: 36px;
+            }
+        }
+    }
+}

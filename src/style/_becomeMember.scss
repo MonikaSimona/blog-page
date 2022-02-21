@@ -1,5 +1,17 @@
 .section-wrapper {
+    font-family: "Montserrat", sans-serif;
     position: relative;
+    margin-bottom: 250px;
+    .arrow-deco {
+        position: absolute;
+        left: 449px;
+        top: 58px;
+    }
+    .img-deco {
+        position: absolute;
+        left: 472px;
+        top: 254px;
+    }
     .text-small {
         font-family: "Montserrat", sans-serif;
         font-size: 29px;
@@ -9,7 +21,6 @@
         margin-bottom: 40px;
     }
     .text-big {
-        font-family: "Montserrat", sans-serif;
         font-size: 44px;
         line-height: 35px;
         margin-top: 0;
@@ -23,17 +34,63 @@
         display: flex;
         flex-direction: column;
         width: 490px;
+        margin-top: 17px;
         label {
+            font-size: 29px;
+            color: $text;
+            font-weight: 400;
         }
         input {
             height: 67px;
             border-radius: 5px;
             border-color: $accent2;
             margin-top: 16px;
+            padding-left: 10px;
+            font-size: 20px;
+            color: $text;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            &::placeholder {
+                color: $secondary;
+            }
             &:focus {
                 outline: none;
-                border-color: $accent1;
+                border-color: $primary;
             }
         }
+    }
+}
+.buttonWrapper {
+    position: relative;
+    width: 235px;
+    margin-top: 55px;
+
+    path {
+        transition: 0.3s;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        path {
+            fill: #3b89a0;
+        }
+
+        .buttonTitle {
+            color: $primary;
+        }
+    }
+
+    .buttonTitle {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 25px;
+        color: $text;
+        font-weight: 500;
+        transition: 0.3s;
     }
 }

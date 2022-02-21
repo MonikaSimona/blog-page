@@ -6,7 +6,7 @@ import postlist from "../posts.json"
 import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
 
-const Home = () => {
+const Home = ({ scrollElementRef }) => {
     let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-fitness")).slice(0, 4)
     let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement")).slice(0, 4)
     let foodBlogs = postlist.filter((post) => post.tags.includes("food")).slice(0, 4)
@@ -51,7 +51,7 @@ const Home = () => {
                     postsFromCategory={booksAndMoviesBlogs} />
                 <BlogsFromCategory
                     category={"Beauty & Style"} postsFromCategory={beautyAndStyleBlogs} />
-                <BecomeAMemberSection />
+                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
             </div>
         </>
 
