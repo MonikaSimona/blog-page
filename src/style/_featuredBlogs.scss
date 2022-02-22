@@ -1,0 +1,21 @@
+.featured-blogs-wrapper {
+    position: relative;
+    .featured-blog-cards {
+        display: flex;
+        flex-direction: column;
+        &:last-child {
+            margin-left: auto;
+        }
+        .card-wrapper {
+            max-width: 693px;
+            .card-header {
+                .card-title {
+                    font-size: 40px;
+                }
+            }
+            .card-desc {
+                font-size: 21px;
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import ReadLink from './ReadLink'
 import { Icon } from '@iconify/react';
 
-const BlogCard = ({ id, title, image, desc, date }) => {
+const BlogCard = ({ id, title, image, desc, date, category }) => {
     return (
         <div className="card-wrapper">
             <div className="card-header">
@@ -25,7 +25,7 @@ const BlogCard = ({ id, title, image, desc, date }) => {
                     {date}
                 </p>
                 <Icon icon="bi:save" className='save-button' onClick={() => console.log("clicked icon")} />
-                <ReadLink link={`/post/${id}`} text="Read more" />
+                <ReadLink link={`/${category}/${id}`} text="Read more" disabled={true} />
             </div>
         </div>
     )

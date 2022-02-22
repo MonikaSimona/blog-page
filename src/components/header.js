@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, NavLink, useNavigate } from "react-router-dom"
 
-const Header = ({ scrollElementRef }) => {
-    console.log(scrollElementRef)
+const Header = ({ scrollElementRef, customFunkcija }) => {
 
-    const executeScroll = () => scrollElementRef.current.scrollIntoView({ block: 'center' })
+    // const executeScroll = () => { console.log(scrollElementRef); scrollElementRef.current.scrollIntoView({ block: 'center' }) }
+    // const executeScroll = () => window.scrollTo({ top: document.body.scrollHeight - 500 })
     const navigate = useNavigate()
 
     return (
@@ -22,7 +22,7 @@ const Header = ({ scrollElementRef }) => {
                             Login
                         </span>
                         <div className="cta-wrapper">
-                            <span onClick={() => { navigate("/"); scrollElementRef && executeScroll() }} className="cta">
+                            <span onClick={() => { customFunkcija(navigate) }} className="cta">
                                 Become a member
                             </span>
                             <img className="arrow" src={require("../assets/images/fatarow.svg")} alt="" />

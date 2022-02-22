@@ -39,19 +39,25 @@ const Home = ({ scrollElementRef }) => {
                 <FeaturedBlogs />
                 <BlogsFromCategory
                     category={"Health & Fitness"}
+                    linkCategory={'health-and-fintess'}
                     postsFromCategory={healthAndFintessBlogs} />
                 <BlogsFromCategory
                     category={"Self Improvement"}
+                    linkCategory={'self-improvement'}
                     postsFromCategory={selfImprovementBlogs} />
                 <BlogsFromCategory
                     category={"Food"}
+                    linkCategory={'food'}
                     postsFromCategory={foodBlogs} />
                 <BlogsFromCategory
                     category={"Books & Movies"}
+                    linkCategory={'books-and-movies'}
                     postsFromCategory={booksAndMoviesBlogs} />
                 <BlogsFromCategory
-                    category={"Beauty & Style"} postsFromCategory={beautyAndStyleBlogs} />
-                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
+                    category={"Beauty & Style"}
+                    linkCategory={'beauty-and-style'}
+                    postsFromCategory={beautyAndStyleBlogs} />
+                {/* <BecomeAMemberSection scrollElementRef={scrollElementRef} /> */}
             </div>
         </>
 

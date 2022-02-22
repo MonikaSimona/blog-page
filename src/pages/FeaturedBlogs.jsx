@@ -1,17 +1,27 @@
 import React from 'react'
+import BlogCard from '../components/BlogCard'
 import postlist from "../posts.json"
 
 const FeaturedBlogs = () => {
-    console.log(postlist)
+    // console.log(postlist)
     let featuredBlogs = postlist.filter((post) => post.tags.includes("featured"))
-    console.log(featuredBlogs)
-    console.log(postlist)
+    console.log(featuredBlogs[0].tags.split(",")[featuredBlogs[0].tags.split(",").length - 1])
+    // console.log(postlist)
 
     return (
         <div className="featured-blogs-wrapper">
             <h3 className="category-title">
                 Featured Blogs
             </h3>
+            <div className="featured-blog-cards">
+                {featuredBlogs && featuredBlogs.map(blog => {
+                    const linkCategory = blog.tags.split(",")[blog.tags.split(",").length - 1]
+                    return <BlogCard id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
+                }
+
+                )}
+
+            </div>
         </div>
     )
 }

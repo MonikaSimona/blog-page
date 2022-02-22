@@ -12,7 +12,6 @@ const BlogsPage = () => {
             title += word + " "
         }
     });
-    console.log(title)
     return (
         <div className="title-wrapper">
             <h1 className='page-title'>{title}</h1>

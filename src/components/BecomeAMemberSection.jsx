@@ -1,10 +1,15 @@
 import React from 'react'
+import { useLocation, useNavigate, useResolvedPath } from 'react-router-dom';
 
 const BecomeAMemberSection = ({ scrollElementRef }) => {
-    console.log(scrollElementRef)
-
+    let resolved = useResolvedPath("/about");
+    const location = useLocation()
+    console.log("LOcation", location.pathname)
+    // if (location.pathname.includes('/about')) {
+    //     return null
+    // }
     return (
-        <div className='section-wrapper' ref={scrollElementRef} >
+        <div className='section-wrapper' ref={scrollElementRef} id="id" style={{ display: location.pathname.includes('/about') ? "none" : "block" }} >
             <img src={require("../assets/images/formDecoration.svg")} alt="" className='arrow-deco' />
             <img src={require("../assets/images/formImageDecoration.svg")} alt="" className='img-deco' />
             <p className="text-small">

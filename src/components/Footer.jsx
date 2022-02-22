@@ -5,7 +5,6 @@ import { Icon } from '@iconify/react';
 
 const Footer = () => {
     const year = new Date()
-    console.log(year)
     return (
         <div className="footer-wrapper">
             <h3 className="footer-quote">
