@@ -1,0 +1,25 @@
+.not-found-wrapper {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: $title;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    .text {
+        width: 606px;
+        margin-left: 50px;
+        .big-text {
+            font-size: 63px;
+        }
+        .small-text {
+            font-size: 43px;
+            .link {
+                color: $accent1;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+    }
+}

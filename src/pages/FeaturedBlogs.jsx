@@ -13,6 +13,8 @@ const FeaturedBlogs = () => {
             <h3 className="category-title">
                 Featured Blogs
             </h3>
+            <img src={require("../assets/images/featured-blogs-arrow.svg")} className="arrow-deco" alt="" />
+            <img src={require("../assets/images/featured-blogs-arrow-2.svg")} className="arrow-deco" alt="" />
             <div className="featured-blog-cards">
                 {featuredBlogs && featuredBlogs.map(blog => {
                     const linkCategory = blog.tags.split(",")[blog.tags.split(",").length - 1]

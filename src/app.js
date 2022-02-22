@@ -22,19 +22,16 @@ const App = () => {
     }
     return (
         <Router>
-            <Header scrollElementRef={scrollRef} customFunkcija={customFunkcija} />
+            <Header scrollElementRef={scrollRef} />
             <Navbar />
 
             <Routes>
                 <Route path="/" element={<Home scrollElementRef={scrollRef} />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/:page" element={<BlogsPage />} />
-                <Route path="/404" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
                 <Route path="/:category/:id" element={<Post />} />
             </Routes>
-            <div className="container">
-                <BecomeAMemberSection scrollElementRef={scrollRef} />
-            </div>
             <Footer />
         </Router>
     )

@@ -57,7 +57,7 @@ const Home = ({ scrollElementRef }) => {
                     category={"Beauty & Style"}
                     linkCategory={'beauty-and-style'}
                     postsFromCategory={beautyAndStyleBlogs} />
-                {/* <BecomeAMemberSection scrollElementRef={scrollElementRef} /> */}
+                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
             </div>
         </>
 

@@ -5,9 +5,6 @@ import ReadLink from '../components/ReadLink'
 import postlist from "../posts.json"
 
 const BlogsFromCategory = ({ category, postsFromCategory, linkCategory }) => {
-  // console.log(postsFromCategory)
-  // console.log(category)
-
 
   return (
     <div className="blogs-category-wrapper">

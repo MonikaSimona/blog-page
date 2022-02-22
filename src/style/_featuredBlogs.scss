@@ -3,11 +3,13 @@
     .featured-blog-cards {
         display: flex;
         flex-direction: column;
-        &:last-child {
-            margin-left: auto;
-        }
+
         .card-wrapper {
             max-width: 693px;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-left: auto;
+            }
             .card-header {
                 .card-title {
                     font-size: 40px;
@@ -16,6 +18,17 @@
             .card-desc {
                 font-size: 21px;
             }
+        }
+    }
+    .arrow-deco {
+        position: absolute;
+        &:first-of-type {
+            right: 87px;
+            top: 109px;
+        }
+        &:last-of-type {
+            bottom: 83px;
+            left: 60px;
         }
     }
 }
