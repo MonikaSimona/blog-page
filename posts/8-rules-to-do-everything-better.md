@@ -3,7 +3,7 @@ title: 8 Rules to Do Everything Better
 description: The most important principles to grow your body and mind.
 author: Brad Stulberg
 date: 2022-02-18T11:27:46.373Z
-tags: post,self-improvement
+tags: post,featured,self-improvement
 image: https://pocket-syndicated-images.s3.amazonaws.com/5d5ab2716b9f9.jpg
 ---
 <!--StartFragment-->
