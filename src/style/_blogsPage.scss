@@ -1,7 +1,46 @@
+.all-blogs-hero {
+    margin-bottom: 105px;
+    position: relative;
+}
 .title-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 217px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+}
+.search-bar-wrapper {
+    width: 307px;
+    margin-bottom: 66px;
+    position: relative;
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    input {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        width: 235px;
+        right: 0;
+        height: 28px;
+        border: none;
+        font-size: 21px;
+        font-family: "Montserrat", sans-serif;
+        color: $text;
+        &:focus {
+            outline: none;
+            border: none;
+        }
+    }
 }
 .page-title {
     text-transform: capitalize;
