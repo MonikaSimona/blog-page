@@ -1,70 +1,115 @@
 .header-wrapper {
-    position: relative;
-    background-color: $primary;
+  position: relative;
+  background-color: $primary;
 
-    .header {
-        height: 86px;
-        display: flex;
-        align-items: center;
-        &-right-items {
-            margin-left: auto;
-            .nav-item {
-                margin-left: 82px;
-            }
-            .cta-wrapper {
-                margin-left: 103px;
-            }
-        }
+  .header {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    &-right-items {
+      margin-left: auto;
+      .nav-item {
+        margin-left: 82px;
+      }
+      .cta-wrapper {
+        margin-left: 103px;
+      }
     }
+  }
+}
+
+.ReactModal__Content {
+  .caska {
+    position: absolute;
+    right: 80px;
+    top: 0;
+  }
+
+  .loginTitle {
+    position: absolute;
+    top: 120px;
+    margin: 0 auto;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+  .book-moliv {
+    position: absolute;
+    right: -15px;
+    top: 120px;
+    transform: scale(0.9);
+  }
+
+  .man-pc {
+    position: absolute;
+    left: -15px;
+    bottom: 0;
+    transform: scale(0.9);
+  }
+
+  .dashes-left {
+    position: absolute;
+    right: 90px;
+    bottom: 105px;
+  }
+
+  form {
+    transform: scale(0.76);
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .nav-item {
-    font-family: "Montserrat", sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-    color: $text;
-    text-decoration: none;
-    transition: 0.3s;
-    &:hover {
-        cursor: pointer;
-        color: $accent1;
-    }
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: $text;
+  text-decoration: none;
+  transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    color: $accent1;
+  }
 }
 .cta-wrapper {
-    display: inline-block;
-    .cta {
-        text-decoration: none;
-        font-size: 19px;
-        color: $accent1;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-    }
-    .cta-link {
-        font-weight: 500;
-        font-size: 17px;
-        text-decoration: none;
-    }
+  display: inline-block;
+  .cta {
+    text-decoration: none;
+    font-size: 19px;
+    color: $accent1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+  }
+  .cta-link {
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  .arrow {
+    margin-left: 4px;
+    transition: 0.3s;
+  }
+  &:hover {
+    cursor: pointer;
     .arrow {
-        margin-left: 4px;
-        transition: 0.3s;
+      transform: translateX(5px);
     }
-    &:hover {
-        cursor: pointer;
-        .arrow {
-            transform: translateX(5px);
-        }
-    }
+  }
 }
 
 .logo {
-    color: $title;
-    font-family: "Amatic SC", cursive;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 30px;
-    letter-spacing: 7;
-    text-decoration: none;
-    img {
-        width: 100px;
-        height: 100%;
-    }
+  color: $title;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 30px;
+  letter-spacing: 7;
+  text-decoration: none;
+  img {
+    width: 100px;
+    height: 100%;
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   HashRouter as Router,
   Navigate,
@@ -21,18 +21,30 @@ import { Provider } from "react-redux";
 import store from "./redux";
 import Profile from "./pages/profile";
 import SavedBlogs from "./pages/savedBlogs";
-
+import LoginModal from "./components/loginModla/loginModal";
 const App = () => {
   const scrollRef = useRef(null);
   const customFunkcija = (navigate) => {
     navigate("/");
     scrollRef.current.scrollIntoView({ block: "center" });
   };
+
+  const [openLoginModal, setOpenLoginModal] = useState(false);
+
+  const handleLoginModal = () => setOpenLoginModal((prev) => !prev);
+
   return (
     <Provider store={store}>
       <Router>
-        <Header scrollElementRef={scrollRef} />
+        <Header
+          scrollElementRef={scrollRef}
+          handleLoginModal={handleLoginModal}
+        />
         <Navbar />
+        <LoginModal
+          openLoginModal={openLoginModal}
+          handleLoginModal={handleLoginModal}
+        />
         <Routes>
           <Route path="/" element={<Home scrollElementRef={scrollRef} />} />
           <Route path="/profile" element={<Profile />} />

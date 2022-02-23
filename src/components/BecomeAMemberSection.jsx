@@ -12,7 +12,8 @@ import { AUTH, FIREBASE_APP } from "../firebase";
 import { addItem, getItem } from "../firebase/actions";
 import { useDispatch } from "react-redux";
 import { setLogin, setUser } from "../redux/slices/userSlice";
-const ErrMsg = ({ children }) => {
+
+export const ErrMsg = ({ children }) => {
   return (
     <p className="err-msg">
       <Icon icon="clarity:error-standard-line" color="#d63037" />
