@@ -60,7 +60,7 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
               signInWithEmailAndPassword(AUTH, email, password).then(() => {
                 setLoading(false);
                 dispatch(setUser(currentUser));
-                navigate("/profile");
+                navigate("/saved-blogs");
               });
             });
           })
