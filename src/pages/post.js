@@ -1,12 +1,17 @@
 import React from "react"
-import { Navigate, useNavigate, useParams } from "react-router-dom"
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import postlist from "../posts.json"
 import BlogCard from "../components/BlogCard"
+import ReactMarkdown from "react-markdown"
 
 const Post = () => {
     const navigate = useNavigate();
-    const { id } = useParams()
+    const { id, category } = useParams()
     const validId = parseInt(id)
+    console.log(category)
+
+    let blogsFromCategory = postlist.filter((post) => post.tags.includes("health-and-fintess")).slice(0, 4)
+
     if (!validId) {
         navigate("/404")
     }
@@ -24,11 +29,41 @@ const Post = () => {
         }
     })
     if (postExists === false) {
-        navigate("/404")
+        navigate("*")
     }
     return (
+        <div className="container">
 
-        <BlogCard title={fetchedPost.title} image={fetchedPost.image} desc={fetchedPost.description} date={fetchedPost.date} />
+            <div className="single-blog-wrapper">
+                <h1 className="title">
+                    {fetchedPost.title}
+                </h1>
+                <div className="info-section">
+                    <p>
+
+                        Published on <span> {fetchedPost.date}</span> by <span>{fetchedPost.author}</span>
+                    </p>
+                </div>
+                <img src={require("../assets/images/lineDecoration.svg")} alt="" className="line-deco" />
+                <img src={fetchedPost.image} alt="" className="blog-image" />
+                <ReactMarkdown source={fetchedPost.content} escapeHtml={false} className="content" />
+                <div className="more-topics-section">
+                    <h2 className="more-topics-title">
+                        More topics
+                    </h2>
+                    <div className="blog-cards-wrapper">
+                        {blogsFromCategory.length > 0 ? blogsFromCategory.map((post) => (
+                            <Link key={post.id} to={`/${category}/${post.id}`} className="card-link">
+                                <BlogCard id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={category} />
+                            </Link>
+                        )) : <p className='no-blogs'> No blogs from this catgory.</p>}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     )
 }
 

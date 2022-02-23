@@ -7,11 +7,11 @@ import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
 
 const Home = ({ scrollElementRef }) => {
-    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-fitness")).slice(0, 4)
+    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-and-fitness")).slice(0, 4)
     let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement")).slice(0, 4)
     let foodBlogs = postlist.filter((post) => post.tags.includes("food")).slice(0, 4)
-    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-movies")).slice(0, 4)
-    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-style")).slice(0, 4)
+    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-and-movies")).slice(0, 4)
+    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-and-style")).slice(0, 4)
     return (
         <>
             <div className="hero">
