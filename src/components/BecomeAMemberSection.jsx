@@ -3,10 +3,15 @@ import { useLocation, useNavigate, useResolvedPath } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Icon } from "@iconify/react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { FIREBASE_APP } from "../firebase";
-import { addItem } from "../firebase/actions";
-
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { AUTH, FIREBASE_APP } from "../firebase";
+import { addItem, getItem } from "../firebase/actions";
+import { useDispatch } from "react-redux";
+import { setLogin, setUser } from "../redux/slices/userSlice";
 const ErrMsg = ({ children }) => {
   return (
     <p className="err-msg">
@@ -19,14 +24,14 @@ const ErrMsg = ({ children }) => {
 const BecomeAMemberSection = ({ scrollElementRef }) => {
   let resolved = useResolvedPath("/about");
   const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   console.log("LOcation", location.pathname);
   // if (location.pathname.includes('/about')) {
   //     return null
   // }
 
   const [loading, setLoading] = useState(false);
-
-  const auth = getAuth(FIREBASE_APP);
 
   const initialValues = {
     name: "",
@@ -45,19 +50,24 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
   const onSubmit = (values) => {
     const { name, email, password } = values;
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(AUTH, email, password)
       .then((userCredential) => {
         // success
+        // create user entity, get him then log in thru auth
         addItem("users", { email, name }, userCredential.user.uid)
           .then((res) => {
-            setLoading(false);
-            console.log("created", res);
+            getItem("users", userCredential.user.uid).then((currentUser) => {
+              signInWithEmailAndPassword(AUTH, email, password).then(() => {
+                setLoading(false);
+                dispatch(setUser(currentUser));
+                navigate("/profile");
+              });
+            });
           })
           .catch((err) => {
             setLoading(false);
           });
       })
-
       .catch((error) => {
         setLoading(false);
         console.log("err", error);
