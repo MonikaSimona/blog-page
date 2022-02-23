@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import postlist from "../posts.json"
 import BlogCard from "../components/BlogCard"
@@ -8,9 +8,17 @@ const Post = () => {
     const navigate = useNavigate();
     const { id, category } = useParams()
     const validId = parseInt(id)
-    console.log(category)
 
-    let blogsFromCategory = postlist.filter((post) => post.tags.includes("health-and-fintess")).slice(0, 4)
+    useEffect(() => {
+
+        window.scrollTo({
+            top: 86,
+
+        });
+    }, [id])
+
+    let blogsFromCategory = postlist.filter((post) => post.tags.includes(category)).slice(0, 4)
+    console.log(postlist)
 
     if (!validId) {
         navigate("/404")
@@ -35,12 +43,12 @@ const Post = () => {
         <div className="container">
 
             <div className="single-blog-wrapper">
+                <img src={require("../assets/images/titleStroke.svg")} alt="" className="title-stroke" />
                 <h1 className="title">
                     {fetchedPost.title}
                 </h1>
                 <div className="info-section">
                     <p>
-
                         Published on <span> {fetchedPost.date}</span> by <span>{fetchedPost.author}</span>
                     </p>
                 </div>
@@ -57,10 +65,9 @@ const Post = () => {
                                 <BlogCard id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={category} />
                             </Link>
                         )) : <p className='no-blogs'> No blogs from this catgory.</p>}
-
-
                     </div>
                 </div>
+                <img src={require("../assets/images/titleStroke.svg")} alt="" className="title-stroke" />
             </div>
         </div>
 
