@@ -7,11 +7,11 @@ import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
 
 const Home = ({ scrollElementRef }) => {
-    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-and-fitness")).slice(0, 4)
-    let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement")).slice(0, 4)
-    let foodBlogs = postlist.filter((post) => post.tags.includes("food")).slice(0, 4)
-    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-and-movies")).slice(0, 4)
-    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-and-style")).slice(0, 4)
+    let healthAndFintessBlogs = postlist.filter((post) => post.tags.includes("health-and-fitness")).slice(0, 3)
+    let selfImprovementBlogs = postlist.filter((post) => post.tags.includes("self-improvement")).slice(0, 3)
+    let foodBlogs = postlist.filter((post) => post.tags.includes("food")).slice(0, 3)
+    let booksAndMoviesBlogs = postlist.filter((post) => post.tags.includes("books-and-movies")).slice(0, 3)
+    let beautyAndStyleBlogs = postlist.filter((post) => post.tags.includes("beauty-and-style")).slice(0, 3)
     return (
         <>
             <div className="hero">
@@ -39,7 +39,7 @@ const Home = ({ scrollElementRef }) => {
                 <FeaturedBlogs />
                 <BlogsFromCategory
                     category={"Health & Fitness"}
-                    linkCategory={'health-and-fintess'}
+                    linkCategory={'health-and-fitness'}
                     postsFromCategory={healthAndFintessBlogs} />
                 <BlogsFromCategory
                     category={"Self Improvement"}

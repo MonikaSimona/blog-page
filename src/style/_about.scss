@@ -1,0 +1,17 @@
+.image-wrapper {
+    position: relative;
+    // margin: 0 auto;
+    height: 670px;
+
+    img {
+        position: absolute;
+        &:first-child {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 46px;
+        }
+        &:last-child {
+            top: 160px;
+        }
+    }
+}
