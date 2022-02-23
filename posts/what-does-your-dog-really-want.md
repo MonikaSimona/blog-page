@@ -9,7 +9,7 @@ image: https://pocket-syndicated-images.s3.amazonaws.com/5dcc113a06128.jpg
 ---
 <!--StartFragment-->
 
-In early 2017, Alaska became the first state to pass a law requiring the consideration of pets’ well being in custody disputes. Seeing that pets, especially dogs, are commonly treated as family members, this may seem like a long overdue change. But it raises the difficult question of determining what’s best for an animal: How do we know what a pet wants?
+**In early 2017**, Alaska became the first state to pass a law requiring the consideration of pets’ well being in custody disputes. Seeing that pets, especially dogs, are commonly treated as family members, this may seem like a long overdue change. But it raises the difficult question of determining what’s best for an animal: How do we know what a pet wants?
 
 In 2013 Shannon Travis and Trisha Murray appeared in the New York State Supreme Court. The couple had been married for less than a year when they decided to divorce. While Travis was away on business, Murray moved out of their New York City apartment. She took some furniture—and she took Joey, their dachshund.
 
