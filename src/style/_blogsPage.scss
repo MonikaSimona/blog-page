@@ -1,6 +1,10 @@
 .all-blogs-hero {
     margin-bottom: 105px;
     position: relative;
+    .hero-image {
+        width: 100%;
+        object-fit: cover;
+    }
 }
 .title-wrapper {
     display: flex;
