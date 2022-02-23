@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import BlogCard from '../components/BlogCard'
 import postlist from "../posts.json"
 
@@ -18,7 +19,9 @@ const FeaturedBlogs = () => {
             <div className="featured-blog-cards">
                 {featuredBlogs && featuredBlogs.map(blog => {
                     const linkCategory = blog.tags.split(",")[blog.tags.split(",").length - 1]
-                    return <BlogCard id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
+                    return <Link key={blog.id} to={`/${linkCategory}/${blog.id}`} className="card-link">
+                        <BlogCard id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
+                    </Link>
                 }
 
                 )}

@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="navbar-wrapper">
             <img src={require("../assets/images/heroDecoration.svg")} className="deco" alt="" />
-            <CustomLink to="/health-and-fintess">
+            <CustomLink to="/health-and-fitness">
                 Health &#38; Fitness
             </CustomLink>
             <CustomLink to="/self-improvement">
