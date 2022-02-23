@@ -4,7 +4,7 @@ description: With MRI, scientists are beginning to answer that question in a
   much more sophisticated way.
 author: Gregory Berns
 date: 2022-02-17T14:47:16.882Z
-tags: post,featured,health-fitness
+tags: post,featured,health-and-fitness
 image: https://pocket-syndicated-images.s3.amazonaws.com/5dcc113a06128.jpg
 ---
 <!--StartFragment-->
