@@ -18,12 +18,16 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     fontFamily: "Montserrat",
-    width: "55%",
+    width: "46%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    border: "none",
     // height: "75%",
   },
+  overlay: {
+    background: "#00000040"
+  }
 };
 
 Modal.setAppElement("#root");
@@ -121,9 +125,8 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
                   />
                 </svg>
                 <span
-                  className={`buttonTitle ${
-                    loading ? "isLoading" : ""
-                  } loginBtn`}
+                  className={`buttonTitle ${loading ? "isLoading" : ""
+                    } loginBtn`}
                   role="button"
                   onClick={() => (loading ? null : handleSubmit())}
                 >

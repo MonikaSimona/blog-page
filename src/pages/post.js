@@ -18,7 +18,6 @@ const Post = () => {
     }, [id])
 
     let blogsFromCategory = postlist.filter((post) => post.tags.includes(category)).slice(0, 3)
-    console.log(postlist)
 
     if (!validId) {
         navigate("/404")

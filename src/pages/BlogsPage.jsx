@@ -11,7 +11,7 @@ const BlogsPage = () => {
     const { page } = useParams()
     const [searchState, setSearchState] = useState("")
 
-    let blogsFromCategory = postlist.filter((post) => post.tags.includes("health-and-fitness"))
+    let blogsFromCategory = postlist.filter((post) => post.tags.includes(page))
     const titlewords = page.split("-")
     let title = ""
     titlewords.map((word) => {

@@ -27,7 +27,6 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  console.log("LOcation", location.pathname);
   // if (location.pathname.includes('/about')) {
   //     return null
   // }
@@ -50,12 +49,13 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
 
   const onSubmit = (values) => {
     const { name, email, password } = values;
+    const savedBlogs = []
     setLoading(true);
     createUserWithEmailAndPassword(AUTH, email, password)
       .then((userCredential) => {
         // success
         // create user entity, get him then log in thru auth
-        addItem("users", { email, name }, userCredential.user.uid)
+        addItem("users", { email, name, savedBlogs }, userCredential.user.uid)
           .then((res) => {
             getItem("users", userCredential.user.uid).then((currentUser) => {
               signInWithEmailAndPassword(AUTH, email, password).then(() => {

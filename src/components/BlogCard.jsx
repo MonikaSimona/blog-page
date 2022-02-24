@@ -19,12 +19,12 @@ const BlogCard = ({ id, title, image, desc, date, category }) => {
                     {desc}
                 </p>
             </div>
-            <div className="card-footer">
+            <div className="card-footer" >
 
                 <p className="card-date">
                     {date}
                 </p>
-                <Icon icon="bi:save" className='save-button' onClick={() => console.log("clicked icon")} />
+                <Icon icon="bi:save" className='save-button' onClick={(e) => { e.stopPropagation(); console.log("clicked icon") }} />
                 <ReadLink link={`/${category}/${id}`} text="Read more" disabled={true} />
             </div>
         </div>

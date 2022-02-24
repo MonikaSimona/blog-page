@@ -1,0 +1,32 @@
+.no-saved-blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 124px;
+    .welcome {
+        font-family: "Amatic SC", cursive;
+        font-weight: 700;
+        font-size: 50px;
+        color: $accent2;
+        margin-bottom: 42px;
+    }
+    .text {
+        font-family: "Montserrat", sans-serif;
+        color: $text;
+        font-size: 39px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 7px;
+        a {
+            color: $accent1;
+            text-decoration: none;
+            transition: 0.3s;
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
+    img {
+        margin: 150px 0;
+    }
+}
