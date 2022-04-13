@@ -7,20 +7,17 @@ const BlogCard = ({ id, title, image, desc, date, category }) => {
     return (
         <div className="card-wrapper">
             <div className="card-header">
-
                 <h5 className="card-title">
                     {title}
                 </h5>
                 <img src={image} alt="" />
             </div>
             <div className="card-body">
-
                 <p className="card-desc">
                     {desc}
                 </p>
             </div>
             <div className="card-footer" >
-
                 <p className="card-date">
                     {date}
                 </p>

@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { setUser } from "./redux/slices/userSlice";
 import { useDispatch } from "react-redux";
+import { getItem } from "./firebase/actions";
 const App = () => {
   const scrollRef = useRef(null);
 
@@ -34,7 +35,10 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
-      dispatch(setUser(user));
+      getItem("users", user.uid).then((currentUser) => {
+
+        dispatch(setUser(currentUser));
+      });
 
 
     })
@@ -55,11 +59,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home scrollElementRef={scrollRef} />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/:page" element={<BlogsPage />} />
+        <Route path="/about" element={<About scrollElementRef={scrollRef} />} />
+        <Route path="/:page" element={<BlogsPage scrollElementRef={scrollRef} />} />
         <Route path="/saved-blogs" element={<SavedBlogs />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/:category/:id" element={<Post />} />
+        <Route path="/:category/:id" element={<Post scrollElementRef={scrollRef} />} />
       </Routes>
       <Footer />
     </Router>

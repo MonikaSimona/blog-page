@@ -1,9 +1,10 @@
 import React from "react"
 import TeamMemberCard from "../components/TeamMemberCard"
 import { Icon } from "@iconify/react"
+import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
 
-const About = () => {
+const About = ({ scrollElementRef }) => {
     return (
 
         <div className="container">
@@ -49,6 +50,9 @@ const About = () => {
                 For any questions you can reach us at:
             </p>
             <a href="mailto:allblog@mail.com" className="mail-link"> <span> allblog@mail.com </span></a>
+            <div className=" become-member-margin">
+                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
+            </div>
         </div>
 
     )

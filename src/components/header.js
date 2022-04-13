@@ -1,21 +1,25 @@
+import { Icon } from "@iconify/react";
 import { getAuth, signOut } from "firebase/auth";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import SearchBar from "../assets/svg/SearchBar";
 import { removeUser } from "../redux/slices/userSlice";
 
 const Header = ({ scrollElementRef, handleLoginModal }) => {
   const { user } = useSelector((state) => state.user);
   const [openMenu, setOpenMenu] = useState(false)
-  // console.log("USER", user)
   const auth = getAuth()
   const dispatch = useDispatch()
   const executeScroll = () => {
     scrollElementRef.current.scrollIntoView({ block: "center" });
   };
   // const executeScroll = () => window.scrollTo({ top: document.body.scrollHeight - 500 })
-  const navigate = useNavigate();
+
+
+
+
 
   return (
     <div className="header-wrapper">
@@ -28,24 +32,28 @@ const Header = ({ scrollElementRef, handleLoginModal }) => {
             <NavLink to="/about" className="nav-item">
               About
             </NavLink>
-
             {!user && (
               <span className="nav-item" onClick={handleLoginModal}>
                 Login
               </span>
             )}
             {!!user && (
-              <span className="nav-item" onClick={() => setOpenMenu(!openMenu)}>
-                <strong>{user.name}</strong>
+              // <span className="nav-item " >
+              <div className="drop-down-item" onClick={() => setOpenMenu(!openMenu)}>
 
-                {openMenu && (<ul>
-                  <li> <NavLink to="/profile">profile</NavLink> </li>
-                  <li> <NavLink to="/saved-blogs">saved blogs</NavLink> </li>
+                <Icon icon="fa:user-circle-o" fontSize={24} />
+                <p>{user.name}</p>
+                {/* {openMenu && ( */}
+                <ul className={`drop-down-content ${openMenu && "open"}`}>
+                  <li> <NavLink to="/profile">Profile</NavLink> </li>
+                  <li> <NavLink to="/saved-blogs">Saved blogs</NavLink> </li>
                   <li> <span onClick={
                     () => { dispatch(removeUser()); signOut(auth) }
-                  }>log out</span> </li>
-                </ul>)}
-              </span>
+                  }>Log out</span> </li>
+                </ul>
+                {/* // )} */}
+              </div>
+              // </span>
             )}
             {!user && (
               <div className="cta-wrapper">

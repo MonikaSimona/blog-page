@@ -56,6 +56,7 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
         // create user entity, get him then log in thru auth
         getItem("users", userCredential.user.uid)
           .then((currentUser) => {
+            console.log("CURRENT USER", currentUser)
             setLoading(false);
             dispatch(setUser(currentUser));
             handleLoginModal();

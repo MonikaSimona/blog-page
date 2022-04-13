@@ -3,11 +3,12 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import BecomeAMemberSection from '../components/BecomeAMemberSection'
 import BlogCard from '../components/BlogCard'
 import postlist from "../posts.json"
 
 
-const BlogsPage = () => {
+const BlogsPage = ({ scrollElementRef }) => {
     const { page } = useParams()
     const [searchState, setSearchState] = useState("")
 
@@ -54,6 +55,9 @@ const BlogsPage = () => {
 
                 </div>
 
+            </div>
+            <div className="container become-member-margin">
+                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
             </div>
         </div>
     )
