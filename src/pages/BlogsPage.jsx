@@ -13,6 +13,7 @@ const BlogsPage = ({ scrollElementRef }) => {
     const [searchState, setSearchState] = useState("")
 
     let blogsFromCategory = postlist.filter((post) => post.tags.includes(page))
+    const [searchedBlogs, setSearchedBlogs] = useState([])
     const titlewords = page.split("-")
     let title = ""
     titlewords.map((word) => {
@@ -22,9 +23,34 @@ const BlogsPage = ({ scrollElementRef }) => {
             title += word + " "
         }
     });
+
+    useEffect(() => {
+        setSearchedBlogs(blogsFromCategory)
+        console.log(page)
+        window.scrollTo(0, 0)
+    }, [page])
+
     useEffect(() => {
         console.log(searchState)
     }, [searchState])
+
+    const handleSearch = () => {
+        const temp = [...searchedBlogs]
+        const newBlogs = temp.filter((item) => item.title.toLowerCase().includes(searchState.toLowerCase()))
+        setSearchedBlogs(newBlogs)
+        if (searchState == "") {
+            setSearchedBlogs(blogsFromCategory)
+
+        }
+        console.log(newBlogs)
+    }
+    const handleKeyPressed = (event) => {
+        if (event.key == "Enter") {
+            handleSearch()
+        }
+    }
+
+
 
 
     return (
@@ -38,15 +64,15 @@ const BlogsPage = ({ scrollElementRef }) => {
             </div>
             <div className="container">
                 <div className="search-bar-wrapper">
-                    <label htmlFor="search">
+                    <label htmlFor="search" onClick={() => handleSearch()}>
                         <Icon icon="bytesize:search" color="#7b726b" className='search-icon' width={28} />
                     </label>
                     <img src={require("../assets/images/searchBar.svg")} alt="" />
-                    <input type="text" id='search' value={searchState} onChange={(e) => setSearchState(e.target.value)} />
+                    <input type="text" id='search' value={searchState} onChange={(e) => setSearchState(e.target.value)} onKeyPress={(event) => handleKeyPressed(event)} />
 
                 </div>
                 <div className="blog-cards-wrapper">
-                    {blogsFromCategory.length > 0 ? blogsFromCategory.map((post) => (
+                    {searchedBlogs.length > 0 ? searchedBlogs.map((post) => (
 
                         <Link key={post.id} to={`/${page}/${post.id}`} className="card-link">
                             <BlogCard id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={page} />

@@ -41,15 +41,17 @@ const Header = ({ scrollElementRef, handleLoginModal }) => {
               // <span className="nav-item " >
               <div className="drop-down-item" onClick={() => setOpenMenu(!openMenu)}>
 
-                <Icon icon="fa:user-circle-o" fontSize={24} />
+                <img src={require
+                  ("../assets/images/girl-avatar.jpg")} alt="" />
                 <p>{user.name}</p>
                 {/* {openMenu && ( */}
                 <ul className={`drop-down-content ${openMenu && "open"}`}>
-                  <li> <NavLink to="/profile">Profile</NavLink> </li>
-                  <li> <NavLink to="/saved-blogs">Saved blogs</NavLink> </li>
+
+                  <li> <NavLink to="/profile">  <Icon icon="healthicons:ui-user-profile-outline" fontSize={18} />  Profile</NavLink> </li>
+                  <li> <NavLink to="/saved-blogs"> <Icon icon="fluent:copy-20-regular" fontSize={18} />Saved blogs</NavLink> </li>
                   <li> <span onClick={
                     () => { dispatch(removeUser()); signOut(auth) }
-                  }>Log out</span> </li>
+                  }> <Icon icon="bi:door-open" fontSize={18} />Log out</span> </li>
                 </ul>
                 {/* // )} */}
               </div>

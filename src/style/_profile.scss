@@ -1,0 +1,40 @@
+.profile {
+    margin-top: 74px !important;
+    display: flex;
+    .user-data {
+        &-title {
+            font-family: "Amatic SC";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 63px;
+            color: black;
+            margin-top: 0;
+        }
+        label {
+            font-family: "Montserrat", sans-serif;
+            font-size: 30px;
+            line-height: 36px;
+        }
+        .input-wrapper {
+            input {
+                height: 67px !important;
+            }
+        }
+        .buttonWrapper {
+            .buttonTitle {
+                font-family: "Montserrat", sans-serif;
+
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 36px;
+            }
+        }
+    }
+    .user-image {
+        margin-left: auto;
+        img {
+            max-width: 560px;
+        }
+    }
+}

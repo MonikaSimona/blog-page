@@ -5,7 +5,7 @@ const CustomLink = ({ children, to, ...props }) => {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: false });
     return (
-        <div className='link-wrapper'>
+        <div className='link-wrapper' onClick={() => { window.scrollTo(0, 0) }}>
             <NavLink className="nav-item" to={to} props={props}>
                 {children}
             </NavLink>

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { ErrMsg } from "../components/BecomeAMemberSection";
+import { useDropzone } from 'react-dropzone'
 
 
 
@@ -10,12 +11,33 @@ import { ErrMsg } from "../components/BecomeAMemberSection";
 const Profile = (props) => {
   const { loggedIn, user } = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
+  const [profileImage, setProfileImage] = useState("")
+  console.log(user && user.name)
+
+  function toBase64(file) {
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      console.log(reader.result);
+    };
+    reader.onerror = function (error) {
+      console.log('Error: ', error);
+    };
+  }
+
+  const onDrop = useCallback(acceptedFiles => {
+    // Do something with the files
+    setProfileImage(toBase64(acceptedFiles[0]))
+    console.log("IMAGE", toBase64(acceptedFiles[0]))
+  }, [])
 
 
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   const initialValues = {
-    name: "",
-    email: "",
+    name: user && user.name,
+    email: user && user.email,
     password: "",
   };
 
@@ -56,21 +78,22 @@ const Profile = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container profile ">
       <div className="user-data">
-        <h3 className="user-data-ttile">
+        <h3 className="user-data-title">
           Your Profile
         </h3>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
+          enableReinitialize
         >
           {({ handleSubmit }) => (
-            <Form className="form">
+            <Form className="form" autoComplete={false}>
               <div className="input-wrapper">
                 <label htmlFor="name">Name:</label>
-                <Field name="name" id="name" placeholder="Lany Kravitz" />
+                <Field name="name" id="name" autoComplete="new-name" />
                 <ErrorMessage name="name" component={ErrMsg} />
               </div>
 
@@ -79,14 +102,15 @@ const Profile = (props) => {
                 <Field
                   name="email"
                   id="email"
-                  placeholder="lanykravitz@mail.com"
+                  autoComplete="new-email"
+
                 />
                 <ErrorMessage name="email" component={ErrMsg} />
               </div>
 
               <div className="input-wrapper">
                 <label htmlFor="password">Password:</label>
-                <Field name="password" id="password" type="password" />
+                <Field name="password" id="password" type="password" autoComplete="new-password" />
                 <ErrorMessage name="password" component={ErrMsg} />
               </div>
               <div className="buttonWrapper">
@@ -107,7 +131,7 @@ const Profile = (props) => {
                   role="button"
                   onClick={() => (loading ? null : handleSubmit())}
                 >
-                  {loading ? "Loading" : "Create account"}
+                  {loading ? "Loading" : "Save changes"}
                 </span>
               </div>
             </Form>
@@ -115,11 +139,18 @@ const Profile = (props) => {
         </Formik>
       </div>
       <div className="user-image">
+        {/* <img src={require("../assets/images/girl-avatar.jpg")} alt="" /> */}
+        {profileImage !== "" ? <img src={`${profileImage && profileImage}`} alt="" /> : <div {...getRootProps()}>
+          <input {...getInputProps()} />
+          {
+            isDragActive ?
+              <p>Drop the files here ...</p> :
+              <p>Drag 'n' drop some files here, or click to select files</p>
+          }
+        </div>}
 
       </div>
-      This is profile
-      {loggedIn && <p>im logged in</p>}
-      {!!user && <p>{user.name || ""}</p>}
+
     </div>
   );
 };

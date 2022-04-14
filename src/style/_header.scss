@@ -83,6 +83,12 @@
   position: relative;
   cursor: pointer;
   z-index: 10;
+  img {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 
   p {
     font-family: "Montserrat", sans-serif;
@@ -111,7 +117,8 @@
       a,
       span {
         text-decoration: none;
-        display: inline-block;
+        display: flex;
+        align-items: center;
         // height: 34px;
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
@@ -139,7 +146,12 @@
     li {
       opacity: 1;
       max-height: 34px;
-      a {
+
+      svg {
+        margin-right: 10px;
+        path {
+          fill: $accent1;
+        }
       }
     }
   }
