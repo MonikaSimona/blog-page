@@ -46,6 +46,7 @@ const App = () => {
   }, [auth])
 
   return (
+
     <Router>
       <Header
         scrollElementRef={scrollRef}
@@ -56,16 +57,18 @@ const App = () => {
         openLoginModal={openLoginModal}
         handleLoginModal={handleLoginModal}
       />
-      <Routes>
-        <Route path="/" element={<Home scrollElementRef={scrollRef} />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/about" element={<About scrollElementRef={scrollRef} />} />
-        <Route path="/:page" element={<BlogsPage scrollElementRef={scrollRef} />} />
-        <Route path="/saved-blogs" element={<SavedBlogs />} />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/:category/:id" element={<Post scrollElementRef={scrollRef} />} />
-      </Routes>
-      <Footer />
+      <div className="parrent">
+        <Routes>
+          <Route path="/" element={<Home scrollElementRef={scrollRef} />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/about" element={<About scrollElementRef={scrollRef} />} />
+          <Route path="/:page" element={<BlogsPage scrollElementRef={scrollRef} />} />
+          <Route path="/saved-blogs" element={<SavedBlogs />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/:category/:id" element={<Post scrollElementRef={scrollRef} />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 };

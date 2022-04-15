@@ -1,16 +1,19 @@
-.profile {
+.user-data-title {
     margin-top: 74px !important;
+    font-family: "Amatic SC";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 63px;
+    color: black;
+    margin-top: 0;
+}
+.profile {
     display: flex;
+    position: relative;
+    margin-bottom: 117px !important;
+
     .user-data {
-        &-title {
-            font-family: "Amatic SC";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 50px;
-            line-height: 63px;
-            color: black;
-            margin-top: 0;
-        }
         label {
             font-family: "Montserrat", sans-serif;
             font-size: 30px;
@@ -32,9 +35,84 @@
         }
     }
     .user-image {
-        margin-left: auto;
-        img {
-            max-width: 560px;
+        margin-top: 35px;
+        margin-left: 150px;
+        width: 100%;
+        position: relative;
+        .arrow-deco {
+            position: absolute;
+            left: -130px;
+            top: -70px;
+            width: 150px;
+            height: 150px;
+        }
+        .drop-zone {
+            width: 440px;
+            height: 440px;
+            background-color: $primary;
+            border-radius: 50%;
+            border: 5px dashed $accent2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            svg {
+                path {
+                    fill: $secondary;
+                }
+            }
+            .drop {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            p {
+                text-align: center;
+                margin: 0;
+                font-family: "Montserrat", sans-serif;
+
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 36px;
+                color: $secondary;
+                max-width: 80%;
+            }
+        }
+        .drop-zone-image-set {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            // z-index: -1;
+            opacity: 0.4;
+            transition: 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        .drop-zone-image-set-drag {
+            opacity: 0.8;
+        }
+        .profile-img {
+            width: 450px;
+            // max-width: 560px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 50%;
+            object-position: center center;
+        }
+        .profile-image-decoration {
+            position: absolute;
+            right: -150px;
+            bottom: -250px;
+            transform: rotate(-34deg);
+            overflow-x: hidden;
+            z-index: -1;
         }
     }
 }

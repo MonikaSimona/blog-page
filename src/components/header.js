@@ -41,8 +41,8 @@ const Header = ({ scrollElementRef, handleLoginModal }) => {
               // <span className="nav-item " >
               <div className="drop-down-item" onClick={() => setOpenMenu(!openMenu)}>
 
-                <img src={require
-                  ("../assets/images/girl-avatar.jpg")} alt="" />
+                {user.profileImage ? <img src={user.profileImage} alt="" /> : <Icon icon="carbon:user-avatar-filled" fontSize={28} />}
+
                 <p>{user.name}</p>
                 {/* {openMenu && ( */}
                 <ul className={`drop-down-content ${openMenu && "open"}`}>
