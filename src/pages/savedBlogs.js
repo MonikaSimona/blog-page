@@ -12,7 +12,7 @@ const SavedBlogs = () => {
     user &&
       getItem("users", user.id).then((data) => {
         console.log("data", data);
-        if (data.savedBlogs.length > 0) {
+        if (data?.savedBlogs?.length > 0) {
           console.log("SAVED BLOGS", data.savedBlogs)
           setSavedBlogs(data.savedBlogs)
         }
