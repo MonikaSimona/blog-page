@@ -28,4 +28,5 @@ html {
 .parrent {
     overflow-x: hidden;
     position: relative;
+    overflow-y: -moz-hidden-unscrollable;
 }

@@ -43,6 +43,11 @@ const Profile = (props) => {
 
   //   console.log("CURRENT", auth.currentUser)
   // }
+  useEffect(() => {
+    if (user) {
+      setProfileImage(user.profileImage)
+    }
+  }, [])
 
 
 
