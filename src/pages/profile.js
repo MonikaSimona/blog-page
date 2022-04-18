@@ -7,6 +7,8 @@ import { useDropzone } from 'react-dropzone'
 import { Icon } from "@iconify/react";
 import { getAuth, updatePassword, updateProfile } from "firebase/auth";
 import { addItem } from "../firebase/actions";
+import toast, { Toaster } from 'react-hot-toast';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -47,7 +49,7 @@ const Profile = (props) => {
     if (user) {
       setProfileImage(user.profileImage)
     }
-  }, [])
+  }, [user])
 
 
 
@@ -78,6 +80,21 @@ const Profile = (props) => {
 
     addItem("users", { email, name, profileImage }, userId).then((res) => {
       console.log("SUCCESS", res)
+      toast.success('Profile updated!', {
+        style: {
+          border: '1px dashed #d63037',
+          padding: '16px',
+          color: '#3b89a0',
+          borderRadius: "none",
+          fontFamily: "Montserrat"
+
+        },
+        iconTheme: {
+          primary: '#e2cfaf',
+          secondary: '#d63037',
+        },
+        position: "bottom-center"
+      })
     }).catch(error => {
       console.log(error)
     })
@@ -96,7 +113,8 @@ const Profile = (props) => {
 
   return (
     <div className="container  ">
-      <h3 className="user-data-title">
+
+      <h3 className="user-data-title" >
         Your Profile
       </h3>
       <div className="profile">
@@ -179,7 +197,7 @@ const Profile = (props) => {
           <img src={require("../assets/images/savedBlogsDecoration.svg")} alt="" className="profile-image-decoration" />
         </div>
       </div>
-
+      <Toaster />
     </div>
   );
 };
