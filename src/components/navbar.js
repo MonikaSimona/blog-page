@@ -15,6 +15,7 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
+
     })
     return (
         <div className={`navbar-wrapper ${scrolled && 'navbar-wrapper-sticky'}`}>

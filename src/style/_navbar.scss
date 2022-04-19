@@ -15,8 +15,9 @@
     }
 }
 .navbar-wrapper-sticky {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 7;
     min-height: 50px;
     transition: 0.3s;

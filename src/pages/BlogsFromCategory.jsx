@@ -14,9 +14,9 @@ const BlogsFromCategory = ({ category, postsFromCategory, linkCategory }) => {
       </h3>
       <div className="blog-cards-wrapper">
         {postsFromCategory.length > 0 ? postsFromCategory.map((post) => (
-          <Link key={post.id} to={`/${linkCategory}/${post.id}`} className="card-link">
-            <BlogCard id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={linkCategory} />
-          </Link>
+          // <Link key={post.id} to={`/${linkCategory}/${post.id}`} className="card-link">
+          <BlogCard key={post.id} id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={linkCategory} />
+          // </Link>
         )) : <p className='no-blogs'> No blogs from this catgory.</p>}
 
 

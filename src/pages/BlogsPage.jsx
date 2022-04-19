@@ -74,9 +74,9 @@ const BlogsPage = ({ scrollElementRef }) => {
                 <div className="blog-cards-wrapper">
                     {searchedBlogs.length > 0 ? searchedBlogs.map((post) => (
 
-                        <Link key={post.id} to={`/${page}/${post.id}`} className="card-link">
-                            <BlogCard id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={page} />
-                        </Link>
+                        // <Link key={post.id} to={`/${page}/${post.id}`} className="card-link">
+                        <BlogCard key={post.id} id={post.id} title={post.title} image={post.image} desc={post.description} date={post.date} category={page} />
+                        // </Link>
                     )) : <p className='no-blogs'> No blogs from this category.</p>}
 
                 </div>

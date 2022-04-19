@@ -19,9 +19,10 @@ const FeaturedBlogs = () => {
             <div className="featured-blog-cards">
                 {featuredBlogs && featuredBlogs.map(blog => {
                     const linkCategory = blog.tags.split(",")[blog.tags.split(",").length - 1]
-                    return <Link key={blog.id} to={`/${linkCategory}/${blog.id}`} className="card-link">
-                        <BlogCard id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
-                    </Link>
+                    return <BlogCard key={blog.id} id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
+                    // <Link key={blog.id} to={`/${linkCategory}/${blog.id}`} className="card-link">
+
+                    // </Link>
                 }
 
                 )}
