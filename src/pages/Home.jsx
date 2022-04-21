@@ -1,5 +1,5 @@
 import React from "react"
-import PostList from "../components/postlist"
+import PostList from "../components/PostList"
 import BlogsFromCategory from "./BlogsFromCategory"
 import FeaturedBlogs from "./FeaturedBlogs"
 import postlist from "../posts.json"
@@ -36,23 +36,23 @@ const Home = ({ scrollElementRef }) => {
 
             </div>
             <div className="container">
-                <FeaturedBlogs />
+                <FeaturedBlogs scrollElementRef={scrollElementRef} />
                 <BlogsFromCategory
                     category={"Health & Fitness"}
                     linkCategory={'health-and-fitness'}
-                    postsFromCategory={healthAndFintessBlogs} />
+                    postsFromCategory={healthAndFintessBlogs} scrollElementRef={scrollElementRef} />
                 <BlogsFromCategory
                     category={"Self Improvement"}
                     linkCategory={'self-improvement'}
-                    postsFromCategory={selfImprovementBlogs} />
+                    postsFromCategory={selfImprovementBlogs} scrollElementRef={scrollElementRef} />
                 <BlogsFromCategory
                     category={"Food"}
                     linkCategory={'food'}
-                    postsFromCategory={foodBlogs} />
+                    postsFromCategory={foodBlogs} scrollElementRef={scrollElementRef} />
                 <BlogsFromCategory
                     category={"Books & Movies"}
                     linkCategory={'books-and-movies'}
-                    postsFromCategory={booksAndMoviesBlogs} />
+                    postsFromCategory={booksAndMoviesBlogs} scrollElementRef={scrollElementRef} />
                 <BlogsFromCategory
                     category={"Beauty & Style"}
                     linkCategory={'beauty-and-style'}

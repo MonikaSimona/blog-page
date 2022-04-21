@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Navigate,
@@ -7,40 +7,41 @@ import {
 } from "react-router-dom";
 import "./style/main.scss";
 import "typeface-raleway";
-import Home from "./pages/home";
-import About from "./pages/about";
-import Post from "./pages/post";
-import NotFound from "./pages/notfound";
-import Header from "./components/header";
-import Navbar from "./components/navbar";
+import Post from "./pages/Post";
+import NotFound from "./pages/NotFound";
 import BlogsPage from "./pages/BlogsPage";
-import { useRef } from "react";
-import Footer from "./components/Footer";
-import Profile from "./pages/profile";
-import SavedBlogs from "./pages/savedBlogs";
-import LoginModal from "./components/loginModla/loginModal";
-import { useEffect } from "react";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import LoginModal from "./components/LoginModal";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import SavedBlogs from "./pages/SavedBlogs";
+import About from "./pages/About";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { setUser } from "./redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { getItem } from "./firebase/actions";
+import Footer from "./components/Footer";
+
+
 const App = () => {
   const scrollRef = useRef(null);
 
-
   const [openLoginModal, setOpenLoginModal] = useState(false);
+
   const handleLoginModal = () => setOpenLoginModal((prev) => !prev);
   const dispatch = useDispatch();
   const auth = getAuth()
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
-      getItem("users", user.uid).then((currentUser) => {
-
-        dispatch(setUser(currentUser));
-      });
-
-
+      if (user !== null) {
+        getItem("users", user.uid).then((currentUser) => {
+          if (currentUser !== null) {
+            dispatch(setUser(currentUser));
+          }
+        });
+      }
     })
     return unsubscribe
   }, [auth])

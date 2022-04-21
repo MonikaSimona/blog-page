@@ -82,9 +82,7 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
         className="section-wrapper"
         ref={scrollElementRef}
         id="id"
-      // style={{
-      //   display: location.pathname.includes("/about") ? "none" : "block",
-      // }}
+
       >
         <img
           src={require("../assets/images/formDecoration.svg")}
@@ -107,10 +105,15 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
           onSubmit={onSubmit}
         >
           {({ handleSubmit }) => (
-            <Form className="form">
+            <Form className="form" autoComplete="off">
               <div className="input-wrapper">
                 <label htmlFor="name">Name:</label>
-                <Field name="name" id="name" placeholder="Lany Kravitz" />
+                <Field
+                  name="name"
+                  id="name"
+                  placeholder="Lany Kravitz"
+                  autoComplete="new-name"
+                />
                 <ErrorMessage name="name" component={ErrMsg} />
               </div>
 
@@ -120,13 +123,19 @@ const BecomeAMemberSection = ({ scrollElementRef }) => {
                   name="email"
                   id="email"
                   placeholder="lanykravitz@mail.com"
+                  autoComplete="new-email"
                 />
                 <ErrorMessage name="email" component={ErrMsg} />
               </div>
 
               <div className="input-wrapper">
                 <label htmlFor="password">Password:</label>
-                <Field name="password" id="password" type="password" />
+                <Field
+                  name="password"
+                  id="password"
+                  type="password"
+                  autoComplete="new-password"
+                />
                 <ErrorMessage name="password" component={ErrMsg} />
               </div>
               <div className="buttonWrapper">

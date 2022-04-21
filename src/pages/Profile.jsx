@@ -47,8 +47,14 @@ const Profile = (props) => {
   // }
   useEffect(() => {
     if (user) {
-      setProfileImage(user.profileImage)
+      if (user.profileImage) {
+
+        setProfileImage(user.profileImage)
+      }
+    } else {
+      setProfileImage("")
     }
+
   }, [user])
 
 
@@ -95,6 +101,7 @@ const Profile = (props) => {
         },
         position: "bottom-center"
       })
+      setLoading(false)
     }).catch(error => {
       console.log(error)
     })

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { ErrMsg } from "../BecomeAMemberSection";
+import { ErrMsg } from "./BecomeAMemberSection";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { AUTH } from "../../firebase";
-import { getItem } from "../../firebase/actions";
-import { setUser } from "../../redux/slices/userSlice";
+import { AUTH } from "../firebase";
+import { getItem } from "../firebase/actions";
+import { setUser } from "../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 const customStyles = {
@@ -23,7 +23,6 @@ const customStyles = {
     alignItems: "center",
     justifyContent: "center",
     border: "none",
-    // height: "75%",
   },
   overlay: {
     background: "#00000040"
@@ -81,12 +80,12 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
       <p className="loginTitle">Login</p>
       <>
         <img
-          src={require("../../assets/images/caska.svg")}
+          src={require("../assets/images/caska.svg")}
           alt=""
           className="caska"
         />
         <img
-          src={require("../../assets/images/book-moliv.svg")}
+          src={require("../assets/images/book-moliv.svg")}
           alt=""
           className="book-moliv"
         />
@@ -96,20 +95,25 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
           onSubmit={onSubmit}
         >
           {({ handleSubmit }) => (
-            <Form className="form loginForm">
+            <Form className="form loginForm" autoComplete="off">
               <div className="input-wrapper">
                 <label htmlFor="email">Email:</label>
                 <Field
                   name="email"
                   id="email"
                   placeholder="lanykravitz@mail.com"
+                  autoComplete="new-email"
                 />
                 <ErrorMessage name="email" component={ErrMsg} />
               </div>
 
               <div className="input-wrapper">
                 <label htmlFor="password">Password:</label>
-                <Field name="password" id="password" type="password" />
+                <Field
+                  name="password"
+                  id="password"
+                  type="password"
+                  autoComplete="new-password" />
                 <ErrorMessage name="password" component={ErrMsg} />
               </div>
               <div className="buttonWrapper">
@@ -138,12 +142,12 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
           )}
         </Formik>
         <img
-          src={require("../../assets/images/man-pc.svg")}
+          src={require("../assets/images/man-pc.svg")}
           alt=""
           className="man-pc"
         />
         <img
-          src={require("../../assets/images/dashes-left.svg")}
+          src={require("../assets/images/dashes-left.svg")}
           alt=""
           className="dashes-left"
         />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import BlogCard from '../components/BlogCard'
 import postlist from "../posts.json"
 
-const FeaturedBlogs = () => {
+const FeaturedBlogs = ({ scrollElementRef }) => {
     // console.log(postlist)
     let featuredBlogs = postlist.filter((post) => post.tags.includes("featured"))
     console.log(featuredBlogs[0].tags.split(",")[featuredBlogs[0].tags.split(",").length - 1])
@@ -19,7 +19,7 @@ const FeaturedBlogs = () => {
             <div className="featured-blog-cards">
                 {featuredBlogs && featuredBlogs.map(blog => {
                     const linkCategory = blog.tags.split(",")[blog.tags.split(",").length - 1]
-                    return <BlogCard key={blog.id} id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} />
+                    return <BlogCard key={blog.id} id={blog.id} title={blog.title} image={blog.image} desc={blog.description} date={blog.date} category={linkCategory} scrollElementRef={scrollElementRef} />
                     // <Link key={blog.id} to={`/${linkCategory}/${blog.id}`} className="card-link">
 
                     // </Link>

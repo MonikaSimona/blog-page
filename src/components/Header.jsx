@@ -10,10 +10,12 @@ import { removeUser } from "../redux/slices/userSlice";
 const Header = ({ scrollElementRef, handleLoginModal }) => {
   const { user } = useSelector((state) => state.user);
   const [openMenu, setOpenMenu] = useState(false)
+  const navigate = useNavigate();
+
   const auth = getAuth()
   const dispatch = useDispatch()
   const executeScroll = () => {
-    scrollElementRef.current.scrollIntoView({ block: "center" });
+    scrollElementRef.current.scrollIntoView({ block: "start" });
   };
   // const executeScroll = () => window.scrollTo({ top: document.body.scrollHeight - 500 })
 
@@ -38,24 +40,17 @@ const Header = ({ scrollElementRef, handleLoginModal }) => {
               </span>
             )}
             {!!user && (
-              // <span className="nav-item " >
               <div className="drop-down-item" onClick={() => setOpenMenu(!openMenu)}>
-
                 {user.profileImage ? <img src={user.profileImage} alt="" /> : <Icon icon="carbon:user-avatar-filled" fontSize={28} />}
-
                 <p>{user.name}</p>
-                {/* {openMenu && ( */}
                 <ul className={`drop-down-content ${openMenu && "open"}`}>
-
                   <li> <NavLink to="/profile">  <Icon icon="healthicons:ui-user-profile-outline" fontSize={18} />  Profile</NavLink> </li>
                   <li> <NavLink to="/saved-blogs"> <Icon icon="fluent:copy-20-regular" fontSize={18} />Saved blogs</NavLink> </li>
                   <li> <span onClick={
-                    () => { dispatch(removeUser()); signOut(auth) }
+                    () => { dispatch(removeUser()); signOut(auth); navigate("/") }
                   }> <Icon icon="bi:door-open" fontSize={18} />Log out</span> </li>
                 </ul>
-                {/* // )} */}
               </div>
-              // </span>
             )}
             {!user && (
               <div className="cta-wrapper">
