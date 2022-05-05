@@ -3,24 +3,43 @@ import { getItem } from "../firebase/actions";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import postlist from "../posts.json"
+import { getAuth } from "firebase/auth";
 
 const SavedBlogs = () => {
   const { loggedIn, user } = useSelector((state) => state.user);
   const [savedBlogs, setSavedBlogs] = useState([])
 
+  const auth = getAuth();
+  // console.log("AUTH", user)
+
+
   useEffect(() => {
-    user &&
-      getItem("users", user.id).then((data) => {
-        console.log("data", data);
-        if (data?.savedBlogs?.length > 0) {
-          console.log("SAVED BLOGS", data.savedBlogs)
-          setSavedBlogs(data.savedBlogs)
-        }
-      });
-  }, []);
+    var temp = [];
+    if (user) {
+      postlist.forEach((item) => {
+        user.savedBlogs.forEach((saved) => {
+          if (item.id == saved) {
+            temp.push(item)
+          }
+        })
+      })
+      console.log(temp)
+      setSavedBlogs(temp)
+      // console.log(user.savedBlogs)
+    }
+  }, [user?.savedBlogs])
+
 
   return <div className="container">
-    {user ? savedBlogs.length > 0 ? "saved blogs" : (
+    {user ? savedBlogs?.length > 0 ? (
+      <div>
+        {savedBlogs.map((item) => (
+          <p>{item.title}</p>
+        ))}
+      </div>
+
+    ) : (
       <div className="no-saved-blogs">
         <h1 className="welcome">
           Welcome!

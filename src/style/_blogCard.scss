@@ -7,6 +7,7 @@
     transition: 0.3s;
     height: fit-content;
     // box-shadow: 0.5px 0.5px 10px rgba(128, 128, 128, 0.192);
+    position: relative;
     a {
         text-decoration: none;
     }
@@ -14,6 +15,56 @@
         cursor: pointer;
         background-color: #eee4d3;
     }
+    .info-popup-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(29, 27, 27, 0.485);
+        z-index: 11;
+        .info-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 380px;
+            width: 70%;
+            height: 50%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 11;
+            padding: 33px;
+            border-radius: 5px;
+
+            &-text {
+                font-family: "Montserrat", sans-serif;
+                font-size: 17px;
+                text-align: center;
+                color: #000;
+                margin-bottom: 36px;
+                line-height: 21.6px;
+                margin-top: 0;
+            }
+            .close-button {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                color: $secondary;
+                opacity: 0.7;
+                transition: 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .cta-wrapper {
+                text-align: center;
+            }
+        }
+    }
+
     .card-header {
         .card-title {
             font-family: "Amatic SC", cursive;
@@ -65,6 +116,15 @@
             &:hover {
                 cursor: pointer;
                 color: $accent1;
+            }
+        }
+        .checked {
+            width: 20px;
+            height: 20px;
+            left: 49%;
+            color: $accent2;
+            &:hover {
+                color: $accent2;
             }
         }
     }

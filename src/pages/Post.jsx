@@ -3,8 +3,9 @@ import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import postlist from "../posts.json"
 import BlogCard from "../components/BlogCard"
 import ReactMarkdown from "react-markdown"
+import BecomeAMemberSection from "../components/BecomeAMemberSection"
 
-const Post = () => {
+const Post = ({ scrollElementRef }) => {
     const navigate = useNavigate();
     const { id, category } = useParams()
     const validId = parseInt(id)
@@ -67,6 +68,9 @@ const Post = () => {
                     </div>
                 </div>
                 <img src={require("../assets/images/titleStroke.svg")} alt="" className="title-stroke" />
+            </div>
+            <div className="container become-member-margin">
+                <BecomeAMemberSection scrollElementRef={scrollElementRef} />
             </div>
         </div>
 
