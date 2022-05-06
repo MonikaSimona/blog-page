@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { getItem } from "../firebase/actions";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -9,12 +8,15 @@ import BlogCard from "../components/BlogCard";
 import { Icon } from "@iconify/react";
 import { arrayRemove, doc, updateDoc } from "firebase/firestore";
 import { FIREBASE_DB } from "../firebase";
-import { SpinnerDotted, SpinnerRoundFilled } from "spinners-react";
+import { SpinnerRoundFilled } from "spinners-react";
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookShareButton } from "react-share";
+
 
 const SavedBlogs = () => {
   const { loggedIn, user } = useSelector((state) => state.user);
   const [savedBlogs, setSavedBlogs] = useState([])
   const [registerBlogId, setRegisterBlogId] = useState()
+  const [openShareButtons, setOpenShareButtons] = useState(false)
   const auth = getAuth();
   // console.log("AUTH", user)
   var temp = [];
@@ -66,11 +68,24 @@ const SavedBlogs = () => {
         </h3>
         <div className="saved-blogs-wrapper">
           {savedBlogs.map((item) => (
+            registerBlogId !== item.id &&
+
             <div className="single-blog" key={item.id} >
               <BlogCard id={item.id} title={item.title} image={item.image} date={item.date} />
               <div className="additional-card-footer">
                 <Icon icon="fluent:delete-28-regular" onClick={() => handleRemoveSaved(item.id)} />
-                <Icon icon="fluent:share-48-regular" />
+                <Icon icon="fluent:share-48-regular" onClick={() => setOpenShareButtons(!openShareButtons)} />
+                {openShareButtons && (
+                  <div className="share-buttons">
+                    <EmailShareButton url="" >
+                      <EmailIcon />
+                    </EmailShareButton>
+                    <FacebookShareButton>
+                      <FacebookIcon />
+                    </FacebookShareButton>
+                  </div>
+                )}
+
               </div>
             </div>
           ))}

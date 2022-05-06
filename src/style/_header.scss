@@ -21,50 +21,6 @@
   }
 }
 
-.ReactModal__Content {
-  .caska {
-    position: absolute;
-    right: 80px;
-    top: 0;
-  }
-
-  .loginTitle {
-    position: absolute;
-    top: 120px;
-    margin: 0 auto;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 35px;
-  }
-
-  .book-moliv {
-    position: absolute;
-    right: -15px;
-    top: 120px;
-    transform: scale(0.9);
-  }
-
-  .man-pc {
-    position: absolute;
-    left: -15px;
-    bottom: 0;
-    transform: scale(0.9);
-  }
-
-  .dashes-left {
-    position: absolute;
-    right: 90px;
-    bottom: 105px;
-  }
-
-  form {
-    transform: scale(0.76);
-    margin-top: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 .nav-item {
   font-family: "Montserrat", sans-serif;
   font-size: 19px;

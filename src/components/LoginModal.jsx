@@ -9,6 +9,7 @@ import { getItem } from "../firebase/actions";
 import { setUser } from "../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
+import { SpinnerRoundFilled } from "spinners-react";
 const customStyles = {
   content: {
     top: "50%",
@@ -77,6 +78,12 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
       style={customStyles}
       contentLabel="Login Modal"
     >
+      {loading && (
+        <div className="loading-wrapper">
+          <SpinnerRoundFilled size={200} color="#d63037" secondaryColor="#3b89a0" />
+        </div>
+      )}
+
       <p className="loginTitle">Login</p>
       <>
         <img
@@ -152,6 +159,8 @@ const LoginModal = ({ openLoginModal, handleLoginModal }) => {
           className="dashes-left"
         />
       </>
+
+
     </Modal>
   );
 };
