@@ -26,7 +26,9 @@ I’ve had, um, experience with this conundrum. As a food writer and the author 
 
 — Leftovers with a fried egg on top. Somehow a fried egg turns hodgepodge into a meal; it’s not science, but it’s proven.
 
-[![blue cheese toasts by Ali slagle](https://cupofjo.com/wp-content/uploads/2022/04/5922_Buffalo-Celery-Salad-with-Blue-Cheese-Toasts_Ali-Slagle_2021-02-22_mark-weinberg.jpg)](https://cupofjo.com/wp-content/uploads/2022/04/5922_Buffalo-Celery-Salad-with-Blue-Cheese-Toasts_Ali-Slagle_2021-02-22_mark-weinberg.jpg)
+![](https://cupofjo.com/wp-content/uploads/2022/04/5922_Buffalo-Celery-Salad-with-Blue-Cheese-Toasts_Ali-Slagle_2021-02-22_mark-weinberg.jpg)
+
+[](https://cupofjo.com/wp-content/uploads/2022/04/5922_Buffalo-Celery-Salad-with-Blue-Cheese-Toasts_Ali-Slagle_2021-02-22_mark-weinberg.jpg)
 
 **2. Toast and Friends**
 
@@ -38,7 +40,9 @@ I’ve had, um, experience with this conundrum. As a food writer and the author 
 
 — A pita pocket, warmed in the toaster or microwave and filled with hummus and whatever crunchy or cooked vegetables are around.
 
-[![spaghetti agile e olio by Ali slagle](https://cupofjo.com/wp-content/uploads/2022/04/2658_Spaghetti-Aglio-e-Olio_Ali-Slagle_2020-10-09_mark-weinberg-scaled.jpg)](https://cupofjo.com/wp-content/uploads/2022/04/2658_Spaghetti-Aglio-e-Olio_Ali-Slagle_2020-10-09_mark-weinberg-scaled.jpg)
+![](https://cupofjo.com/wp-content/uploads/2022/04/2658_Spaghetti-Aglio-e-Olio_Ali-Slagle_2020-10-09_mark-weinberg-scaled.jpg)
+
+[](https://cupofjo.com/wp-content/uploads/2022/04/2658_Spaghetti-Aglio-e-Olio_Ali-Slagle_2020-10-09_mark-weinberg-scaled.jpg)
 
 **3. Pantry Diving**
 
@@ -52,9 +56,11 @@ I’ve had, um, experience with this conundrum. As a food writer and the author 
 
 - - -
 
-[![Ali Slagle](https://cupofjo.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-13-at-11.25.05-AM.png)](https://cupofjo.com/2022/04/what-to-cook-when-you-are-tired/screen-shot-2022-04-13-at-11-25-05-am/)
+![](https://cupofjo.com/wp-content/uploads/2022/04/Screen-Shot-2022-04-13-at-11.25.05-AM.png)
 
-[![I dream of dinner cookbook by Ali slagle](https://cupofjo.com/wp-content/uploads/2022/04/IDreamofDinner-Cover-hires-scaled.jpg)](https://cupofjo.com/wp-content/uploads/2022/04/IDreamofDinner-Cover-hires-scaled.jpg)
+![](https://cupofjo.com/wp-content/uploads/2022/04/IDreamofDinner-Cover-hires-scaled.jpg)
+
+[](https://cupofjo.com/wp-content/uploads/2022/04/IDreamofDinner-Cover-hires-scaled.jpg)
 
 *[Ali Slagle](https://www.instagram.com/itsalislagle/) develops low-effort, high-reward recipes for The New York Times and The Washington Post. Her new cookbook is the wonderful [I Dream of Dinner (So You Don’t Have To)](http://alislagle.com/).*
 
