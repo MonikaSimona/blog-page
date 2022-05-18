@@ -5,7 +5,7 @@ description: "Here’s a puzzle: A home-cooked meal is often most beneficial on
   had, um, experience with this conundrum."
 author: " Ali Slagle"
 date: 2022-05-18T14:22:06.294Z
-tags: post
+tags: post,food
 image: https://cupofjo.com/wp-content/uploads/2022/04/2445_My-Egg-Sandwich_Ali-Slagle_2020-10-09_mark-weinberg-scaled.jpg
 ---
 <!--StartFragment-->
