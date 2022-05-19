@@ -10,6 +10,7 @@ import { removeUser } from "../redux/slices/userSlice";
 const Header = ({ scrollElementRef, handleLoginModal }) => {
   const { user } = useSelector((state) => state.user);
   const [openMenu, setOpenMenu] = useState(false)
+  const [showTopButton, setShowTopButton] = useState(false)
   const navigate = useNavigate();
 
   const auth = getAuth()
@@ -19,15 +20,21 @@ const Header = ({ scrollElementRef, handleLoginModal }) => {
   };
   // const executeScroll = () => window.scrollTo({ top: document.body.scrollHeight - 500 })
 
-
-
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      setShowTopButton(true)
+    } else {
+      setShowTopButton(false)
+    }
+  })
 
 
   return (
     <>
-      <div className="scroll-to-top" onClick={() => window.scrollTo(0, 0)}>
+      <div className={`scroll-to-top  ${showTopButton ? 'show-scroll-to-top' : ""} `} onClick={() => window.scrollTo(0, 0)}>
         <img src={require("../assets/images/fatarow.svg")} alt="" />
       </div>
+
       <div className="header-wrapper">
         <div className="container">
           <div className="header">
