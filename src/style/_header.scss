@@ -1,3 +1,26 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 2%;
+  width: 70px;
+  height: 70px;
+  background-color: lighten($primary, 10%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+  z-index: 100;
+  img {
+    width: 70%;
+    transform: rotate(-90deg);
+  }
+  &:hover {
+    background-color: $primary;
+    cursor: pointer;
+  }
+}
 .header-wrapper {
   position: relative;
   background-color: $primary;
