@@ -42,6 +42,10 @@
         p {
             font-size: 22px;
             font-weight: 400;
+            img {
+                text-align: center;
+                margin: 0 auto;
+            }
         }
         h2 {
             font-weight: 500;
@@ -52,9 +56,18 @@
             &:hover {
                 background-color: $primary;
             }
+            img {
+                margin: 0 auto;
+            }
         }
         ul li {
             margin-bottom: 15px;
+        }
+        img {
+            width: 100%;
+            max-width: 50%;
+            object-fit: cover;
+            margin: 0 auto;
         }
     }
     .more-topics-section {
